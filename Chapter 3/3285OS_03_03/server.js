@@ -8,6 +8,13 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var express = require('./config/express');
 
 // Create a new Express application instance
+// This is quite misleading. This does not create any instance, but simply calls the function that is returned
+// by the require. As the ./config/express simply exports a function. By calling it we receive the app (which is an
+// express instance)
+//
+// A more succinct way - and less confusing - way to do this would be:
+//
+// var app = require('./config/express')()
 var app = express();
 
 // Use the Express application instance to listen to the '3000' port
