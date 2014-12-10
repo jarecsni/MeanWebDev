@@ -8,7 +8,7 @@ var http = require('http');
 http.createServer(function(req, res) {
 	// Use the 'response' object to write the 'content-type' response header
 	res.writeHead(200, {
-		'Content-Type': 'text/plain'
+		'Content-Type': 'text/html'
 	});
 
 	// Use the 'response' object to write a response body and end the request

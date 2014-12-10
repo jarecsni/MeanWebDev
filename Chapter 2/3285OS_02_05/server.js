@@ -17,7 +17,7 @@ var helloWorld = function(req, res, next) {
 };
 
 // Configure the 'connect' application instance to use the 'helloWorld' middleware
-app.use(helloWorld);
+app.use('/hello', helloWorld);
 
 // Use the 'connect' application instance to listen to the '3000' port
 app.listen(3000);
