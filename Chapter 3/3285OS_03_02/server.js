@@ -25,7 +25,7 @@ var sayHello = function(req, res, next) {
 	res.send('Hello ' + req.param('name'));
 };
 
-// Mount both middleware funcitons
+// Mount both middleware functions
 app.get('/', hasName, sayHello);
 
 // Use the Express application instance to listen to the '3000' port
@@ -35,4 +35,5 @@ app.listen(3000);
 console.log('Server running at http://localhost:3000/');
 
 // Use the module.exports property to expose our Express application instance for external usage
-module.exports = app;
+//module.exports = app;
+

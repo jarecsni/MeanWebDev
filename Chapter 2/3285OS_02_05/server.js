@@ -16,7 +16,17 @@ var helloWorld = function(req, res, next) {
 	res.end('Hello World');
 };
 
+var logger = function(req, res, next) {
+	console.log(req.method, req.url);
+	next();
+}
+
 // Configure the 'connect' application instance to use the 'helloWorld' middleware
+
+// position of the logger is VERY important in this case, as the helloWorld middleware
+// is terminal, so it won't go anything - if you put logger after the helloWorld it won't
+// therefore be called (it will be called for anything else though).
+app.use(logger);
 app.use('/hello', helloWorld);
 
 // Use the 'connect' application instance to listen to the '3000' port
