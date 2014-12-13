@@ -5,7 +5,9 @@
 exports.render = function(req, res) {
 	// If the session's 'lastVisit' property is set, print it out in the console 
 	if (req.session.lastVisit) {
-		console.log(req.session.lastVisit);
+		console.log("Last visit: " + req.session.lastVisit);
+	} else {
+		console.log("no last visit in session");
 	}
 
 	// Set the session's 'lastVisit' property
